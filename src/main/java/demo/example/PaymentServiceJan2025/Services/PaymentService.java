@@ -1,5 +1,6 @@
 package demo.example.PaymentServiceJan2025.Services;
 
+import com.razorpay.RazorpayException;
 import demo.example.PaymentServiceJan2025.paymentGatways.PaymentGateway;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,8 +17,8 @@ public class PaymentService{
         this.paymentGateway = paymentGateway;
     }
 
-    public String initiatePayment(Long orderId, Long amount, String phoneNumber){
-        return null;
+    public String initiatePayment(Long orderId, Long amount, String phoneNumber) throws RazorpayException {
+        return paymentGateway.generatePaymentLink(orderId, amount, phoneNumber);
     }
 
 }

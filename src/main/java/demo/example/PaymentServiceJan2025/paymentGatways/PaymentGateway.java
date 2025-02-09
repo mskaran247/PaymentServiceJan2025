@@ -4,5 +4,5 @@ import com.razorpay.RazorpayException;
 
 public interface PaymentGateway {
 
-    public String generatePaymentLink(Long order_id, Long amount, String phoneNumber) throws RazorpayException;
+    public String generatePaymentLink(Long orderId, Long amount, String phoneNumber) throws RazorpayException;
 }
